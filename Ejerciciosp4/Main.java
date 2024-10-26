@@ -29,5 +29,6 @@ public class Main{
         System.out.println("Tamaño después de eliminar 'Hola': " + listaEnlazada.tamaño());
 
         listaEnlazada.imprimir();
+
     }
 }

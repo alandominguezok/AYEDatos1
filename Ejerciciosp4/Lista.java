@@ -9,7 +9,7 @@ interface Lista<T> {
 
     int buscar(T item);
 
-    int tamaño();
+    int longitud();
 
     void imprimir();
 }
