@@ -9,38 +9,46 @@ public class ListaArrPila<T> implements Pila<T> {
     }
 
     @Override
-    public void apilar(T item){
+    public void apilar(T item) {
         if (pila.longitud() < tamMax) {
             pila.insertarInicio(item);
-            pila.cambiarLongitud(pila.longitud()+1);
         } else {
             System.out.println("La pila está llena");
         }
     }
 
     @Override
-    public void desapilar(){
-        if(pila.longitud() > 0){
+    public void desapilar() {
+        if (pila.longitud() > 0) {
             pila.eliminar(pila.obtenerArreglo()[0]);
-        }else{
+        } else {
             System.out.println("La pila está vacía");
         }
-        
+
     }
 
     @Override
-    public T tope(){
-        if (esVacia()) throw new IllegalArgumentException("La pila está vacía");
+    public T tope() {
+        if (esVacia())
+            throw new IllegalArgumentException("La pila está vacía");
         return pila.obtenerArreglo()[0];
     }
 
     @Override
-    public boolean esVacia(){
+    public boolean esVacia() {
         return pila.longitud() == 0;
     }
 
     @Override
-    public void vaciar(){
+    public void vaciar() {
         pila.vaciar();
+    }
+
+    public int longitud() {
+        return pila.longitud();
+    }
+
+    public void imprimir() {
+        pila.imprimir();
     }
 }
