@@ -1,16 +1,16 @@
 
 interface Lista<T> {
-    public void insertarFin(T item);
+    void insertarFin(T item);
 
-    public void insertarInicio(T item);
+    void insertarInicio(T item);
 
-    public void insertarPos(T item, int pos);
+    void insertarPos(T item, int pos);
 
-    public boolean eliminar(T item);
+    boolean eliminar(T item);
 
-    public int buscar(T item);
+    int buscar(T item);
 
-    public int longitud();
+    int longitud();
 
-    public void imprimir();
+    void imprimir();
 }

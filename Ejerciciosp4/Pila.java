@@ -9,4 +9,8 @@ interface Pila<T>{
     boolean esVacia();
     
     void vaciar();
+
+    void imprimir();
+
+    int longitud();
 }

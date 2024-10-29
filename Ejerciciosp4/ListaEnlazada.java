@@ -17,8 +17,13 @@ public class ListaEnlazada<T> implements Lista<T> {
         this.cabeza = null; // Para listas sin ficticio
     }
 
+    public T elementoCabeza(){
+        return cabeza.elem;
+    }
     @Override
     public void insertarInicio(T item) {
+        if (item == null)
+            throw new IllegalArgumentException("No puede agregar un item nulo");
         Nodo aux = new Nodo(item);
         aux.siguiente = cabeza;
         cabeza = aux;

@@ -43,11 +43,11 @@ public class ListaArrPila<T> implements Pila<T> {
     public void vaciar() {
         pila.vaciar();
     }
-
+    @Override
     public int longitud() {
         return pila.longitud();
     }
-
+    @Override
     public void imprimir() {
         pila.imprimir();
     }
