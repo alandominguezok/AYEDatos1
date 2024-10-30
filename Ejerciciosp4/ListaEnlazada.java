@@ -1,4 +1,3 @@
-
 public class ListaEnlazada<T> implements Lista<T> {
 
     private class Nodo {

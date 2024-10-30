@@ -1,4 +1,3 @@
-
 public class ArrCola<T> implements Cola<T> {
     private Arreglo<T> cola;
     private int tamMax;
@@ -22,9 +21,11 @@ public class ArrCola<T> implements Cola<T> {
     }
 
     @Override
-    public void desencolar(){
+    public T desencolar(){
         if (!esVacia()){
-            cola.eliminar(cola.obtenerArreglo()[0]);
+            T elemFrente = cola.obtenerArreglo()[0];
+            cola.eliminar(elemFrente);
+            return elemFrente;
         } else {
             throw new IllegalStateException("La cola está vacía");
         }

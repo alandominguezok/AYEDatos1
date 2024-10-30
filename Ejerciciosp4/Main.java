@@ -68,9 +68,9 @@ public class Main {
         cola.imprimir();
         System.out.println("Tamaño de la cola: " + cola.longitud());
         System.out.println("La cola está vacía? " + cola.esVacia());
-        cola.desencolar();
+        Integer colaTope = cola.desencolar();
         System.out.println("Tamaño después de desencolar: " + cola.longitud());
-        System.out.println("La cola usando desencolar (Deberia haberse eliminado el primer elemento en entrar): ");
+        System.out.println("La cola usando desencolar (Deberia haberse eliminado "+ colaTope +"): ");
         cola.imprimir();
         cola.vaciar();
         System.out.println("La cola está vacía?, luego de vaciarla... " + cola.esVacia());
@@ -83,9 +83,9 @@ public class Main {
         cola2.imprimir();
         System.out.println("Tamaño de la cola: " + cola2.longitud());
         System.out.println("La cola está vacía? " + cola2.esVacia());
-        cola2.desencolar();
+        Integer colaTope2 = cola2.desencolar();
         System.out.println("Tamaño después de desencolar: " + cola2.longitud());
-        System.out.println("La cola usando desencolar (Deberia haberse eliminado el primer elemento en entrar): ");
+        System.out.println("La cola usando desencolar (Deberia haberse eliminado "+ colaTope2 + "): ");
         cola2.imprimir();
         cola2.vaciar();
         System.out.println("La cola está vacía?, luego de vaciarla... " + cola.esVacia());

@@ -1,3 +1,4 @@
+
 public class ListaEnlazCola<T> implements Cola<T>{
     private ListaEnlazada<T> cola;
 
@@ -13,10 +14,12 @@ public class ListaEnlazCola<T> implements Cola<T>{
     }
 
     @Override
-    public void desencolar(){
+    public T desencolar(){
         if (esVacia())
             throw new IllegalStateException("La cola está vacía.");
-        cola.eliminar(cola.elementoCabeza());
+        T elemFrente = cola.elementoCabeza();
+        cola.eliminar(elemFrente);
+        return elemFrente;
     }
 
     @Override
