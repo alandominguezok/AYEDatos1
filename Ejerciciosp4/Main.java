@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("\n --------------- Prueba con arreglo ---------------");
-        ListaArreglo<String> arreglo = new ListaArreglo<>(10);
+        Arreglo<String> arreglo = new Arreglo<>(10);
         arreglo.insertarInicio("Hola");
         arreglo.insertarFin("Mundo");
         arreglo.insertarInicio("pepe");
@@ -31,7 +31,7 @@ public class Main {
         listaEnlazada.imprimir();
 
         System.out.println("\n ----------------- Prueba con arreglo, pero con pilas --------------------");
-        ListaArrPila<Integer> pila = new ListaArrPila<>(10);
+        ArrPila<Integer> pila = new ArrPila<>(10);
         pila.apilar(1);
         pila.apilar(2);
         pila.apilar(3);
@@ -56,8 +56,38 @@ public class Main {
         System.out.println("Tamaño después de desapilar el primero: " + pila2.longitud());
         System.out.println("La pila sin el tope: ");
         pila2.imprimir();
+        System.out.println("El tope de la pila es (deberia ser el segundo elemento en apilarse): " + pila2.tope());
         pila2.vaciar();
         System.out.println("La pila está vacía?, luego de vaciarla... " + pila2.esVacia());
-        System.out.println("El tope de la pila es (Deberia dar error que la pila está vacía): " + pila2.tope());
+    
+        System.out.println("\n --------------- Prueba con arreglo, pero usando colas ------------------------ ");
+        ArrCola<Integer> cola = new ArrCola<>(10);
+        cola.encolar(1);
+        cola.encolar(2);
+        cola.encolar(3);
+        cola.imprimir();
+        System.out.println("Tamaño de la cola: " + cola.longitud());
+        System.out.println("La cola está vacía? " + cola.esVacia());
+        cola.desencolar();
+        System.out.println("Tamaño después de desencolar: " + cola.longitud());
+        System.out.println("La cola usando desencolar (Deberia haberse eliminado el primer elemento en entrar): ");
+        cola.imprimir();
+        cola.vaciar();
+        System.out.println("La cola está vacía?, luego de vaciarla... " + cola.esVacia());
+
+        System.out.println("\n ---------------- Prueba con lista enlazada, pero usando colas ------------------ ");
+        ListaEnlazCola<Integer> cola2 = new ListaEnlazCola<>();
+        cola2.encolar(1);
+        cola2.encolar(2);
+        cola2.encolar(3);
+        cola2.imprimir();
+        System.out.println("Tamaño de la cola: " + cola2.longitud());
+        System.out.println("La cola está vacía? " + cola2.esVacia());
+        cola2.desencolar();
+        System.out.println("Tamaño después de desencolar: " + cola2.longitud());
+        System.out.println("La cola usando desencolar (Deberia haberse eliminado el primer elemento en entrar): ");
+        cola2.imprimir();
+        cola2.vaciar();
+        System.out.println("La cola está vacía?, luego de vaciarla... " + cola.esVacia());
     }
 }

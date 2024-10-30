@@ -5,6 +5,7 @@ public class ListaEnlazPila<T> implements Pila<T>{
     public ListaEnlazPila() {
         pila = new ListaEnlazada<T>();
     }   
+    
     @Override
     public void apilar(T item){
         if (item == null)

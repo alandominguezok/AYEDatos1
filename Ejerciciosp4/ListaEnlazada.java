@@ -14,12 +14,17 @@ public class ListaEnlazada<T> implements Lista<T> {
     private Nodo cabeza;
 
     public ListaEnlazada() {
-        this.cabeza = null; // Para listas sin ficticio
+        cabeza = null; // Para listas sin ficticio
+    }
+
+    public void vaciar(){
+        cabeza = null;
     }
 
     public T elementoCabeza(){
         return cabeza.elem;
     }
+
     @Override
     public void insertarInicio(T item) {
         if (item == null)

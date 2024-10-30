@@ -1,10 +1,10 @@
 
-public class ListaArreglo<T> implements Lista<T> {
+public class Arreglo<T> implements Lista<T> {
     private T[] arreglo;
     private int tamaño;
 
     @SuppressWarnings("unchecked")
-    public ListaArreglo(int tam) {
+    public Arreglo(int tam) {
         if (tam < 1)
             throw new IllegalArgumentException("El tamaño es inválido");
         arreglo = (T[]) new Object[tam];

@@ -1,19 +1,24 @@
 
-public class ListaArrPila<T> implements Pila<T> {
-    private ListaArreglo<T> pila;
+public class ArrPila<T> implements Pila<T> {
+    private Arreglo<T> pila;
     private int tamMax;
 
-    public ListaArrPila(int tam) {
-        pila = new ListaArreglo<T>(tam);
+    public ArrPila(int tam) {
+        if (tam <= 0)
+            throw new IllegalArgumentException("El tamaño de la pila debe ser positivo");
+        pila = new Arreglo<T>(tam);
         tamMax = tam;
     }
 
     @Override
     public void apilar(T item) {
+        if (item == null) 
+            throw new IllegalArgumentException("El item a apilar es nulo");
+
         if (pila.longitud() < tamMax) {
             pila.insertarInicio(item);
         } else {
-            System.out.println("La pila está llena");
+            throw new IllegalStateException("La pila está llena");
         }
     }
 
@@ -22,7 +27,7 @@ public class ListaArrPila<T> implements Pila<T> {
         if (pila.longitud() > 0) {
             pila.eliminar(pila.obtenerArreglo()[0]);
         } else {
-            System.out.println("La pila está vacía");
+            throw new IllegalStateException("La pila está vacía");
         }
 
     }
@@ -30,7 +35,7 @@ public class ListaArrPila<T> implements Pila<T> {
     @Override
     public T tope() {
         if (esVacia())
-            throw new IllegalArgumentException("La pila está vacía");
+            throw new IllegalStateException("La pila está vacía");
         return pila.obtenerArreglo()[0];
     }
 
@@ -41,14 +46,20 @@ public class ListaArrPila<T> implements Pila<T> {
 
     @Override
     public void vaciar() {
+        if (esVacia())
+            throw new IllegalStateException("La pila está vacía");
         pila.vaciar();
     }
+    
     @Override
     public int longitud() {
         return pila.longitud();
     }
+
     @Override
     public void imprimir() {
+        if (esVacia())
+            throw new IllegalStateException("La pila está vacía");  
         pila.imprimir();
     }
 }
