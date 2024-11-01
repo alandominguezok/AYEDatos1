@@ -8,9 +8,8 @@ public class BalanceoParentesis {
         for (int i = 0; i < expresion.length(); i++) {
             char c = expresion.charAt(i);
 
-            if (c == '(') {
+            if (c == '(') 
                 pila.push(c);
-            }
             else if (c == ')') {
                 if (pila.isEmpty()) {
                     return false;  

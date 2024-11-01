@@ -16,12 +16,22 @@ public class ListaEnlazada<T> implements Lista<T> {
         cabeza = null; // Para listas sin ficticio
     }
 
+    @Override
     public void vaciar(){
         cabeza = null;
     }
 
-    public T elementoCabeza(){
-        return cabeza.elem;
+    @Override
+    public T buscarElem(int pos){
+        if (pos < 0) 
+            throw new IllegalArgumentException("La posición es negativa. ");
+        Nodo aux = cabeza;
+        for (int i = 0; i < pos; i++) {
+            if (aux == null)
+                throw new IllegalStateException("La posición es mayor que el tamaño de la lista.");
+            aux = aux.siguiente;
+        }
+        return aux.elem;
     }
 
     @Override

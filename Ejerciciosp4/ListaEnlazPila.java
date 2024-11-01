@@ -24,7 +24,7 @@ public class ListaEnlazPila<T> implements Pila<T>{
     public T tope(){
         if (esVacia())
             throw new IllegalStateException("La pila está vacía");
-        return pila.elementoCabeza();
+        return pila.buscarElem(0);
     }
 
     @Override

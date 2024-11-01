@@ -24,7 +24,7 @@ public class ArrPila<T> implements Pila<T> {
     @Override
     public void desapilar() {
         if (pila.longitud() > 0) {
-            pila.eliminar(pila.obtenerArreglo()[0]);
+            pila.eliminar(pila.buscarElem(0));
         } else {
             throw new IllegalStateException("La pila está vacía");
         }
@@ -35,7 +35,7 @@ public class ArrPila<T> implements Pila<T> {
     public T tope() {
         if (esVacia())
             throw new IllegalStateException("La pila está vacía");
-        return pila.obtenerArreglo()[0];
+        return pila.buscarElem(0);
     }
 
     @Override

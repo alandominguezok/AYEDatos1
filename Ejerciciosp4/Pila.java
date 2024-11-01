@@ -14,4 +14,5 @@ interface Pila<T>{
     void imprimir();
 
     int longitud();
+
 }

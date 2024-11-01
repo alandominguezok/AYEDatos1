@@ -17,9 +17,14 @@ public class ListaEnlazCola<T> implements Cola<T>{
     public T desencolar(){
         if (esVacia())
             throw new IllegalStateException("La cola está vacía.");
-        T elemFrente = cola.elementoCabeza();
+        T elemFrente = cola.buscarElem(0);
         cola.eliminar(elemFrente);
         return elemFrente;
+    }
+
+    @Override
+    public boolean estaLlena(){
+        return false;
     }
 
     @Override

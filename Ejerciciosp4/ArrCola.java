@@ -23,7 +23,7 @@ public class ArrCola<T> implements Cola<T> {
     @Override
     public T desencolar(){
         if (!esVacia()){
-            T elemFrente = cola.obtenerArreglo()[0];
+            T elemFrente = cola.buscarElem(0);
             cola.eliminar(elemFrente);
             return elemFrente;
         } else {
@@ -34,6 +34,11 @@ public class ArrCola<T> implements Cola<T> {
     @Override
     public boolean esVacia(){
         return cola.longitud() == 0;
+    }
+
+    @Override
+    public boolean estaLlena(){
+        return cola.longitud() == tamMax;
     }
 
     @Override

@@ -13,4 +13,8 @@ interface Lista<T> {
     int longitud();
 
     void imprimir();
+
+    T buscarElem(int pos);
+
+    void vaciar();
 }

@@ -95,11 +95,17 @@ public class Arreglo<T> implements Lista<T> {
         }
     }
 
+    @Override
     public void vaciar() {
         tamaño = 0;
     }
 
-    public T[] obtenerArreglo() {
-        return arreglo;
+    @Override
+    public T buscarElem(int pos){
+        if(pos >= 0 && pos < tamaño){
+            return arreglo[pos];
+        }else{
+            return null;
+        }
     }
 }

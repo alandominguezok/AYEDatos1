@@ -12,4 +12,7 @@ interface Cola<T>{
     int longitud();
 
     void imprimir();
+
+    boolean estaLlena();
+    
 }
